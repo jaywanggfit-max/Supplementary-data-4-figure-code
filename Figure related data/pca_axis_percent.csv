@@ -1,0 +1,5 @@
+"strain","n_samples","n_orthogroups_used","PC1_percent","PC2_percent","normalization","centering"
+"Halomonas",14,1676,37.3337251875655,26.4725165457465,"filterByExpr, TMM normalization, log2(CPM + 1)","features centered and scaled for PCA"
+"Sphingopyxis",16,1634,47.3630224825495,27.7306639529676,"filterByExpr, TMM normalization, log2(CPM + 1)","features centered and scaled for PCA"
+"Aequorivita",15,1258,39.6273290009188,27.9848112948937,"filterByExpr, TMM normalization, log2(CPM + 1)","features centered and scaled for PCA"
+"Psychrobacter",16,1528,41.2495624193592,23.6741679538725,"filterByExpr, TMM normalization, log2(CPM + 1)","features centered and scaled for PCA"
