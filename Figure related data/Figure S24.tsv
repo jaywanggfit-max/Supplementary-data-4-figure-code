@@ -1,0 +1,69 @@
+contrast	contrast_label	orthogroup_id	gene_label	display_gene_label	x	strain	point_status	member_gene_count_in_strain	log2_fold_change	P_value	FDR	neg_log10_P_value	direction	sharing	n_DEG_strains	DEG_strains
+D55_vs_B55	55D vs 55B	OG0001285	fliC	fliC	1	Halomonas	DEG	2	1.0960564445306	5.85118925246946e-06	1.98112993679572e-05	5.23275585472231	Up	single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001285	fliC	fliC	1	Psychrobacter	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001285	fliC	fliC	1	Sphingopyxis	present_not_significant	1						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001285	fliC	fliC	1	Aequorivita	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001994	fliE	fliE	2	Halomonas	DEG	1	-1.20105778338344	0.0024145050667547	0.0044033846484013	2.61717187891085	Down	single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001994	fliE	fliE	2	Psychrobacter	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001994	fliE	fliE	2	Sphingopyxis	present_not_significant	1						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001994	fliE	fliE	2	Aequorivita	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001995	fliF	fliF	3	Halomonas	DEG	1	-1.96382678557282	1.2338297599243e-10	3.62789241690023e-09	9.90874475880023	Down	single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001995	fliF	fliF	3	Psychrobacter	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001995	fliF	fliF	3	Sphingopyxis	present_not_significant	1						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001995	fliF	fliF	3	Aequorivita	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001996	fliG	fliG	4	Halomonas	DEG	1	-1.98636679370353	1.83684400819256e-06	7.26709468395865e-06	5.73592772407402	Down	shared	2	Halomonas;Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001996	fliG	fliG	4	Psychrobacter	absent_no_member_gene	0						shared	2	Halomonas;Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001996	fliG	fliG	4	Sphingopyxis	DEG	1	-1.27997812185671	9.13833527229166e-05	0.0003274570139237	4.0391329123522	Down	shared	2	Halomonas;Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001996	fliG	fliG	4	Aequorivita	absent_no_member_gene	0						shared	2	Halomonas;Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001997	fliI	fliI	5	Halomonas	DEG	1	-1.80107020041297	2.73089509516554e-07	1.42585052320793e-06	6.56369498256469	Down	shared	2	Halomonas;Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001997	fliI	fliI	5	Psychrobacter	absent_no_member_gene	0						shared	2	Halomonas;Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001997	fliI	fliI	5	Sphingopyxis	DEG	1	-1.53387429912564	9.97252493012839e-07	6.21950600604191e-06	6.00119486933212	Down	shared	2	Halomonas;Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001997	fliI	fliI	5	Aequorivita	absent_no_member_gene	0						shared	2	Halomonas;Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001998	fliN	fliN	6	Halomonas	present_not_significant	1						single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001998	fliN	fliN	6	Psychrobacter	absent_no_member_gene	0						single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001998	fliN	fliN	6	Sphingopyxis	DEG	1	-1.17876906297528	0.0003598330776054	0.0011031280465428	3.44389891669583	Down	single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001998	fliN	fliN	6	Aequorivita	absent_no_member_gene	0						single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0002000	fliQ	fliQ	7	Halomonas	present_not_significant	1						single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0002000	fliQ	fliQ	7	Psychrobacter	absent_no_member_gene	0						single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0002000	fliQ	fliQ	7	Sphingopyxis	DEG	1	-2.21497569538218	0.0002180250467976	0.0007054513395394	3.66149361161949	Down	single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0002000	fliQ	fliQ	7	Aequorivita	absent_no_member_gene	0						single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0002001	fliR	fliR	8	Halomonas	present_not_significant	1						single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0002001	fliR	fliR	8	Psychrobacter	absent_no_member_gene	0						single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0002001	fliR	fliR	8	Sphingopyxis	DEG	1	-1.32588368094259	0.000149470830674	0.0005035780150957	3.82544355191035	Down	single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0002001	fliR	fliR	8	Aequorivita	absent_no_member_gene	0						single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0002008	flgB	flgB	9	Halomonas	DEG	1	-1.98241941800193	3.44826800265577e-06	1.24019252627706e-05	5.46239898775702	Down	single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002008	flgB	flgB	9	Psychrobacter	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002008	flgB	flgB	9	Sphingopyxis	present_not_significant	1						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002008	flgB	flgB	9	Aequorivita	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002007	flgC	flgC	10	Halomonas	DEG	1	-2.05581808108526	1.76352584276854e-06	7.05410337107414e-06	5.75361817178354	Down	single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002007	flgC	flgC	10	Psychrobacter	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002007	flgC	flgC	10	Sphingopyxis	present_not_significant	1						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002007	flgC	flgC	10	Aequorivita	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002006	flgD	flgD	11	Halomonas	DEG	1	-1.31172023886149	1.15137101092719e-06	4.9862992617932e-06	5.93878470935444	Down	single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002006	flgD	flgD	11	Psychrobacter	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002006	flgD	flgD	11	Sphingopyxis	present_not_significant	1						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002006	flgD	flgD	11	Aequorivita	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002005	flgF	flgF	12	Halomonas	DEG	1	-1.28498469138964	1.26283164998392e-07	7.2732159634813e-07	6.89865454204659	Down	single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002005	flgF	flgF	12	Psychrobacter	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002005	flgF	flgF	12	Sphingopyxis	present_not_significant	1						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002005	flgF	flgF	12	Aequorivita	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002003	flgH	flgH	13	Halomonas	DEG	1	-1.16168313031066	4.94814818854151e-05	0.0001285751374262	4.30555730247417	Down	single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002003	flgH	flgH	13	Psychrobacter	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002003	flgH	flgH	13	Sphingopyxis	present_not_significant	1						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002003	flgH	flgH	13	Aequorivita	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002002	flgI	flgI	14	Halomonas	DEG	1	-1.37743854382736	1.95654148013458e-05	5.69299222344716e-05	4.70851094029967	Down	single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002002	flgI	flgI	14	Psychrobacter	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002002	flgI	flgI	14	Sphingopyxis	present_not_significant	1						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0002002	flgI	flgI	14	Aequorivita	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001722	flgJ	flgJ	15	Halomonas	DEG	1	-1.04328743876721	0.0002512270867494	0.0005540218386737	3.59993353773894	Down	single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001722	flgJ	flgJ	15	Psychrobacter	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001722	flgJ	flgJ	15	Sphingopyxis	absent_no_member_gene	0						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001722	flgJ	flgJ	15	Aequorivita	present_not_significant	1						single	1	Halomonas
+D55_vs_B55	55D vs 55B	OG0001367	flhB	flhB	16	Halomonas	present_not_significant	2						single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001367	flhB	flhB	16	Psychrobacter	absent_no_member_gene	0						single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001367	flhB	flhB	16	Sphingopyxis	DEG	1	-1.56190002254483	1.45502950065099e-06	8.61419639153518e-06	5.83712820128972	Down	single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0001367	flhB	flhB	16	Aequorivita	absent_no_member_gene	0						single	1	Sphingopyxis
+D55_vs_B55	55D vs 55B	OG0000570	motB	motB	17	Halomonas	present_not_significant	2						single	1	Aequorivita
+D55_vs_B55	55D vs 55B	OG0000570	motB	motB	17	Psychrobacter	absent_no_member_gene	0						single	1	Aequorivita
+D55_vs_B55	55D vs 55B	OG0000570	motB	motB	17	Sphingopyxis	absent_no_member_gene	0						single	1	Aequorivita
+D55_vs_B55	55D vs 55B	OG0000570	motB	motB	17	Aequorivita	DEG	2	1.14252629585607	1.50619810277514e-05	0.0001403553491326	4.82211790377677	Up	single	1	Aequorivita

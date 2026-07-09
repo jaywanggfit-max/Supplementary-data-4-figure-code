@@ -1,0 +1,31 @@
+"contrast","comparison_label","plot_rank","term_id","term_name","term_wrapped","GeneRatio","Count","p.adjust","neg_log10_p_adjust"
+"D55_vs_D0","GO enrichment: 55D vs 0D",1,"GO:0009059","macromolecule biosynthetic process","macromolecule biosynthetic process",0.269870609981516,146,0.0376953798387387,1.42371187614702
+"D55_vs_D0","GO enrichment: 55D vs 0D",2,"GO:0016043","cellular component organization","cellular component organization",0.188539741219963,102,0.0376953798387387,1.42371187614702
+"D55_vs_D0","GO enrichment: 55D vs 0D",3,"GO:0044085","cellular component biogenesis","cellular component biogenesis",0.184842883548983,100,0.0338105053809199,1.47094833758962
+"D55_vs_D0","GO enrichment: 55D vs 0D",4,"GO:0022607","cellular component assembly","cellular component assembly",0.121996303142329,66,0.0072744269676929,2.13820121190503
+"D55_vs_D0","GO enrichment: 55D vs 0D",5,"GO:0043933","protein-containing complex organization","protein-containing complex / organization",0.11275415896488,61,0.0072744269676929,2.13820121190503
+"D55_vs_D0","GO enrichment: 55D vs 0D",6,"GO:0022613","ribonucleoprotein complex biogenesis","ribonucleoprotein complex / biogenesis",0.103512014787431,56,0.0584064452917898,1.23353922480188
+"D55_vs_D0","GO enrichment: 55D vs 0D",7,"GO:0065003","protein-containing complex assembly","protein-containing complex assembly",0.101663585951941,55,0.0072744269676929,2.13820121190503
+"D55_vs_D0","GO enrichment: 55D vs 0D",8,"GO:0006996","organelle organization","organelle organization",0.0905730129390018,49,0.0204170133192581,1.69000778790205
+"D55_vs_D0","GO enrichment: 55D vs 0D",9,"GO:0022618","protein-RNA complex assembly","protein-RNA complex assembly",0.0739371534195933,40,0.0068594512838543,2.16371062393252
+"D55_vs_D0","GO enrichment: 55D vs 0D",10,"GO:0071826","protein-RNA complex organization","protein-RNA complex organization",0.0720887245841035,39,0.0068594512838543,2.16371062393252
+"D55_vs_D0","GO enrichment: 55D vs 0D",11,"GO:0042255","ribosome assembly","ribosome assembly",0.0702402957486136,38,0.0071094547331215,2.14816370665101
+"D55_vs_D0","GO enrichment: 55D vs 0D",12,"GO:0070925","organelle assembly","organelle assembly",0.066543438077634,36,0.0072744269676929,2.13820121190503
+"D55_vs_D0","GO enrichment: 55D vs 0D",13,"GO:0009408","response to heat","response to heat",0.0425138632162661,23,0.0376953798387387,1.42371187614702
+"D55_vs_D0","GO enrichment: 55D vs 0D",14,"GO:0042274","ribosomal small subunit biogenesis","ribosomal small subunit biogenesis",0.0388170055452865,21,0.0804287408684418,1.0945887302303
+"D55_vs_D0","GO enrichment: 55D vs 0D",15,"GO:0000028","ribosomal small subunit assembly","ribosomal small subunit assembly",0.033271719038817,18,0.0327198730187896,1.48518839043305
+"D55_vs_B55","GO enrichment: 55D vs 55B",1,"GO:0051179","localization","localization",0.166666666666667,78,0.115382720176563,0.937859226655866
+"D55_vs_B55","GO enrichment: 55D vs 55B",2,"GO:0006810","transport","transport",0.16025641025641,75,0.0652067069062496,1.18570773214275
+"D55_vs_B55","GO enrichment: 55D vs 55B",3,"GO:0051234","establishment of localization","establishment of localization",0.158119658119658,74,0.12152492503146,0.915334638168936
+"D55_vs_B55","GO enrichment: 55D vs 55B",4,"GO:0042221","response to chemical","response to chemical",0.13034188034188,61,0.12152492503146,0.915334638168936
+"D55_vs_B55","GO enrichment: 55D vs 55B",5,"GO:0055085","transmembrane transport","transmembrane transport",0.128205128205128,60,0.0406037725164504,1.39143361403454
+"D55_vs_B55","GO enrichment: 55D vs 55B",6,"GO:0006811","monoatomic ion transport","monoatomic ion transport",0.10042735042735,47,0.0406037725164504,1.39143361403454
+"D55_vs_B55","GO enrichment: 55D vs 55B",7,"GO:0034220","monoatomic ion transmembrane transport","monoatomic ion transmembrane / transport",0.0662393162393162,31,0.0744587782588607,1.12808409408846
+"D55_vs_B55","GO enrichment: 55D vs 55B",8,"GO:0042255","ribosome assembly","ribosome assembly",0.0662393162393162,31,0.143546478880102,0.843007456052859
+"D55_vs_B55","GO enrichment: 55D vs 55B",9,"GO:0016999","antibiotic metabolic process","antibiotic metabolic process",0.0448717948717948,21,0.136962384589549,0.863398691298146
+"D55_vs_B55","GO enrichment: 55D vs 55B",10,"GO:0006820","monoatomic anion transport","monoatomic anion transport",0.0384615384615384,18,0.12152492503146,0.915334638168936
+"D55_vs_B55","GO enrichment: 55D vs 55B",11,"GO:0098754","detoxification","detoxification",0.0235042735042735,11,0.0744587782588607,1.12808409408846
+"D55_vs_B55","GO enrichment: 55D vs 55B",12,"GO:0097237","cellular response to toxic substance","cellular response to toxic / substance",0.0213675213675213,10,0.108458030530199,0.964738286104075
+"D55_vs_B55","GO enrichment: 55D vs 55B",13,"GO:1990748","cellular detoxification","cellular detoxification",0.0192307692307692,9,0.12152492503146,0.915334638168936
+"D55_vs_B55","GO enrichment: 55D vs 55B",14,"GO:0098869","cellular oxidant detoxification","cellular oxidant detoxification",0.0192307692307692,9,0.12152492503146,0.915334638168936
+"D55_vs_B55","GO enrichment: 55D vs 55B",15,"GO:0015985","energy coupled proton transport, down electrochemical gradient","energy coupled proton transport, / down electrochemical gradient",0.017094017094017,8,0.143546478880102,0.843007456052859
