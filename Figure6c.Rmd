@@ -1,0 +1,136 @@
+---
+title: "Figure 6c code"
+output: html_document
+---
+
+## Source
+
+Extracted from `C:/Users/37962/Desktop/code.Rmd`.
+
+Related original sections: `DEG`, `UpSet`, and `Venn`.
+
+Note: the provided Rmd contains code for the DEG table, UpSet plot, and Venn plot.
+The separate left-side up/down DEG-count bar chart in panel 6c is not present as
+a standalone plotting block in the provided source file; its counts come from the
+same DEG table.
+
+## Setup
+
+```{r}
+suppressPackageStartupMessages({
+  library(edgeR)
+  library(dplyr)
+  library(tidyr)
+  library(readr)
+  library(ggplot2)
+  library(UpSetR)
+  library(ggVennDiagram)
+})
+
+strains <- c("Halomonas", "Psychrobacter", "Aequorivita", "Sphingopyxis")
+strain_cols <- c(
+  Halomonas="#E69F00",
+  Psychrobacter="#0072B2",
+  Aequorivita="#009E73",
+  Sphingopyxis="#CC79A7"
+)
+
+rt <- function(x) read.delim(x, check.names=FALSE)
+wt <- function(x, y) write.table(x, y, sep="\t", quote=FALSE, row.names=FALSE)
+```
+
+## DEG table used by Figure 6c
+
+```{r}
+count_files <- c(Halomonas="", Psychrobacter="", Aequorivita="", Sphingopyxis="")
+sample_file <- ""
+out_all <- ""
+out_deg <- ""
+
+sample_info <- rt(sample_file)
+sample_info <- sample_info[!grepl("AE5500D1\\.[1-4]$", sample_info$sample), ]
+
+run_deg <- function(strain_name, count_file) {
+  x <- rt(count_file)
+  rownames(x) <- x[[1]]
+  x <- x[, -1, drop=FALSE]
+  si <- sample_info[sample_info$strain == strain_name & sample_info$sample %in% colnames(x), ]
+  si <- si[match(intersect(colnames(x), si$sample), si$sample), ]
+  x <- round(as.matrix(x[, si$sample, drop=FALSE]))
+  si$group <- factor(si$condition, levels=c("0B", "0D", "55B", "55D"))
+  y <- DGEList(x)
+  keep <- filterByExpr(y, group=si$group)
+  y <- calcNormFactors(y[keep, , keep.lib.sizes=FALSE])
+  design <- model.matrix(~0 + group, si)
+  colnames(design) <- c("B0", "D0", "B55", "D55")
+  y <- estimateDisp(y, design)
+  fit <- glmQLFit(y, design)
+  contrast_list <- list(
+    D55_vs_D0=makeContrasts(D55-D0, levels=design),
+    D55_vs_B55=makeContrasts(D55-B55, levels=design)
+  )
+  bind_rows(lapply(names(contrast_list), function(nm) {
+    tab <- topTags(glmQLFTest(fit, contrast=contrast_list[[nm]]), n=Inf)$table
+    tab$orthofinder_orthogroup <- rownames(tab)
+    tab$strain <- strain_name
+    tab$contrast <- nm
+    tab$is_DEG <- tab$FDR < 0.05 & abs(tab$logFC) > 1
+    tab$direction <- ifelse(
+      tab$is_DEG & tab$logFC > 0,
+      "up",
+      ifelse(tab$is_DEG & tab$logFC < 0, "down", "none")
+    )
+    tab
+  }))
+}
+
+all_deg <- bind_rows(Map(run_deg, names(count_files), count_files))
+sig_deg <- all_deg %>% filter(is_DEG)
+wt(all_deg, out_all)
+wt(sig_deg, out_deg)
+```
+
+## UpSet plot for Figure 6c
+
+```{r}
+deg_file <- ""
+out_dir <- ""
+
+deg <- rt(deg_file) %>% filter(FDR < 0.05, abs(logFC) > 1)
+if (!"DEG_direction" %in% names(deg)) deg$DEG_direction <- ifelse(deg$logFC > 0, "up", "down")
+
+for (ct in unique(deg$contrast)) {
+  dd <- deg[deg$contrast == ct, ]
+  x <- split(dd$orthofinder_orthogroup, dd$strain)
+  pdf(file.path(out_dir, paste0("upset_", ct, ".pdf")), width=8, height=5)
+  upset(
+    fromList(x[strains]),
+    order.by="freq",
+    sets=strains,
+    mainbar.y.label="DEG count",
+    sets.x.label="DEG count",
+    sets.bar.color=strain_cols[strains]
+  )
+  dev.off()
+}
+```
+
+## Venn inset for Figure 6c
+
+```{r}
+deg_file <- ""
+out_dir <- ""
+
+deg <- rt(deg_file) %>% filter(FDR < 0.05, abs(logFC) > 1)
+if (!"DEG_direction" %in% names(deg)) deg$DEG_direction <- ifelse(deg$logFC > 0, "up", "down")
+
+for (ct in unique(deg$contrast)) {
+  for (di in c("total", "up", "down")) {
+    dd <- deg[deg$contrast == ct, ]
+    if (di != "total") dd <- dd[dd$DEG_direction == di, ]
+    x <- split(dd$orthofinder_orthogroup, dd$strain)
+    p <- ggVennDiagram(x[strains], label_alpha=0) + theme_void()
+    ggsave(file.path(out_dir, paste0("venn_", ct, "_", di, ".pdf")), p, width=6, height=5)
+  }
+}
+```
