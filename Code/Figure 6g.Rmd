@@ -1,0 +1,72 @@
+---
+title: "Figure 6g code"
+output: html_document
+---
+
+## Source
+
+Panel 6g corresponds to `Halomonas` (`Halo`) in the provided Figure 6 image.
+
+## Setup
+
+```{r}
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(tidyr)
+  library(readr)
+  library(ggplot2)
+  library(clusterProfiler)
+})
+
+rt <- function(x) read.delim(x, check.names=FALSE)
+wt <- function(x, y) write.table(x, y, sep="\t", quote=FALSE, row.names=FALSE)
+```
+
+## KEGG enrichment plot for Figure 6g
+
+```{r}
+strain_to_plot <- "Halomonas"
+strain_label <- "Halo"
+
+deg_file <- ""
+t2g_file <- ""
+out_pdf <- ""
+out_table <- ""
+
+deg <- rt(deg_file) %>%
+  filter(strain == strain_to_plot, FDR < 0.05, abs(logFC) > 1)
+t2g <- rt(t2g_file)
+lst <- split(deg$orthofinder_orthogroup, deg$contrast)
+
+ek <- compareCluster(
+  geneCluster=lst,
+  fun="enricher",
+  TERM2GENE=t2g,
+  pvalueCutoff=1,
+  qvalueCutoff=1
+)
+
+res <- as.data.frame(ek) %>%
+  mutate(
+    GeneRatio2=as.numeric(sub("/.*", "", GeneRatio)) / as.numeric(sub(".*/", "", GeneRatio)),
+    neg_log10_padj=-log10(p.adjust)
+  ) %>%
+  group_by(Cluster) %>%
+  arrange(pvalue) %>%
+  slice_head(n=15) %>%
+  ungroup()
+
+p <- ggplot(res, aes(GeneRatio2, reorder(Description, GeneRatio2))) +
+  geom_point(aes(size=Count, color=neg_log10_padj)) +
+  facet_wrap(~Cluster, scales="free_y") +
+  scale_color_gradient(low="blue", high="red") +
+  labs(title=strain_label, x="GeneRatio", y=NULL, color="-log10(P.adjust)", size="Count") +
+  theme_classic(base_size=15) +
+  theme(
+    panel.border=element_rect(fill=NA, linewidth=0.35),
+    axis.ticks=element_line(linewidth=0.35)
+  )
+
+ggsave(out_pdf, p, width=4, height=4)
+wt(res, out_table)
+```

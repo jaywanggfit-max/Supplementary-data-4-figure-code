@@ -1,0 +1,80 @@
+---
+title: "Figure 6d code"
+output: html_document
+---
+
+## Source
+
+Related original section: `PCA`.
+
+## Setup
+
+```{r}
+suppressPackageStartupMessages({
+  library(edgeR)
+  library(dplyr)
+  library(tidyr)
+  library(readr)
+  library(ggplot2)
+})
+
+strains <- c("Halomonas", "Psychrobacter", "Aequorivita", "Sphingopyxis")
+condition_cols <- c("55D"="#D95F5F", "0D"="#72A6C5", "55B"="#E0A458", "0B"="#7F7F7F")
+
+rt <- function(x) read.delim(x, check.names=FALSE)
+wt <- function(x, y) write.table(x, y, sep="\t", quote=FALSE, row.names=FALSE)
+```
+
+## PCA plot for Figure 6d
+
+```{r}
+count_files <- c(Halomonas="", Psychrobacter="", Aequorivita="", Sphingopyxis="")
+sample_file <- ""
+shared_file <- ""
+out_pdf <- ""
+out_table <- ""
+out_loading <- ""
+
+sample_info <- rt(sample_file)
+sample_info <- sample_info[!grepl("AE5500D1\\.[1-4]$", sample_info$sample), ]
+
+count_list <- lapply(names(count_files), function(st) {
+  x <- rt(count_files[[st]])
+  rownames(x) <- x[[1]]
+  x <- x[, -1, drop=FALSE]
+  si <- sample_info[sample_info$strain == st & sample_info$sample %in% colnames(x), ]
+  si <- si[match(intersect(colnames(x), si$sample), si$sample), ]
+  list(count=x[, si$sample, drop=FALSE], info=si)
+})
+names(count_list) <- names(count_files)
+
+shared_og <- Reduce(intersect, lapply(count_list, function(x) rownames(x$count)))
+if (shared_file != "") shared_og <- intersect(shared_og, rt(shared_file)[[1]])
+mat <- do.call(cbind, lapply(count_list, function(x) x$count[shared_og, , drop=FALSE]))
+si <- bind_rows(lapply(count_list, `[[`, "info"))
+mat <- round(as.matrix(mat[, si$sample, drop=FALSE]))
+logcpm <- cpm(calcNormFactors(DGEList(mat)), log=TRUE, prior.count=1)
+pca <- prcomp(t(logcpm), center=TRUE, scale.=FALSE)
+ve <- 100 * pca$sdev^2 / sum(pca$sdev^2)
+pc <- data.frame(sample=rownames(pca$x), PC1=pca$x[,1], PC2=pca$x[,2]) %>%
+  left_join(si, by="sample")
+ld <- data.frame(orthogroup=rownames(pca$rotation), PC1=pca$rotation[,1], PC2=pca$rotation[,2]) %>%
+  arrange(desc(abs(PC1)))
+
+p <- ggplot(pc, aes(PC1, PC2, color=condition, shape=strain)) +
+  stat_ellipse(aes(group=interaction(strain, condition)), linewidth=0.35, alpha=0.55) +
+  geom_point(size=3.2, stroke=0.55) +
+  scale_color_manual(values=condition_cols) +
+  scale_shape_manual(values=c(Halomonas=16, Psychrobacter=15, Aequorivita=8, Sphingopyxis=17)) +
+  labs(x=paste0("PC1: ", round(ve[1], 1), "%"), y=paste0("PC2: ", round(ve[2], 1), "%")) +
+  theme_classic(base_size=16) +
+  theme(
+    panel.border=element_rect(fill=NA, linewidth=0.45),
+    axis.ticks=element_line(linewidth=0.4),
+    legend.title=element_blank()
+  )
+
+ggsave(out_pdf, p, width=6, height=5.5)
+wt(pc, out_table)
+wt(ld, out_loading)
+```
