@@ -1,0 +1,5 @@
+﻿contrast,strain,down,up,total,up_plus_down,up_plus_down_equals_total
+D55_vs_D0,Aequorivita,140.0,100.0,240.0,240.0,True
+D55_vs_D0,Halomonas,212.0,280.0,492.0,492.0,True
+D55_vs_D0,Psychrobacter,79.0,166.0,245.0,245.0,True
+D55_vs_D0,Sphingopyxis,343.0,336.0,679.0,679.0,True

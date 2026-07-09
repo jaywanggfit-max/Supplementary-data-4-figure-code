@@ -1,0 +1,16 @@
+﻿contrast,intersection_pattern,exclusive_total_intersection_size,nonzero,Halomonas_included,Psychrobacter_included,Aequorivita_included,Sphingopyxis_included
+D55_vs_D0,Halomonas,271,True,True,False,False,False
+D55_vs_D0,Psychrobacter,120,True,False,True,False,False
+D55_vs_D0,Aequorivita,121,True,False,False,True,False
+D55_vs_D0,Sphingopyxis,442,True,False,False,False,True
+D55_vs_D0,Halomonas&Psychrobacter,45,True,True,True,False,False
+D55_vs_D0,Halomonas&Aequorivita,25,True,True,False,True,False
+D55_vs_D0,Halomonas&Sphingopyxis,113,True,True,False,False,True
+D55_vs_D0,Psychrobacter&Aequorivita,14,True,False,True,True,False
+D55_vs_D0,Psychrobacter&Sphingopyxis,39,True,False,True,False,True
+D55_vs_D0,Aequorivita&Sphingopyxis,50,True,False,False,True,True
+D55_vs_D0,Halomonas&Psychrobacter&Aequorivita,6,True,True,True,True,False
+D55_vs_D0,Halomonas&Psychrobacter&Sphingopyxis,11,True,True,True,False,True
+D55_vs_D0,Halomonas&Aequorivita&Sphingopyxis,14,True,True,False,True,True
+D55_vs_D0,Psychrobacter&Aequorivita&Sphingopyxis,3,True,False,True,True,True
+D55_vs_D0,Halomonas&Psychrobacter&Aequorivita&Sphingopyxis,7,True,True,True,True,True
